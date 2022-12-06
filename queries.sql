@@ -61,12 +61,13 @@ select max(weight_kg) as max_wgt, min(weight_kg) as min_wgt from animals where s
 --      45 |       5
 
 -- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
-select avg(escape_attempts) as escape_attempts from animals where species = 'pokemon';
- --escape_attempts
+select avg(escape_attempts) as escape_attempts from animals where species = 'pokemon' and  date_of_birth between '1990-1-1' and '2000-1-1';
+--escape_attempts
 --------------------
- --1.7500000000000000
+--3.0000000000000000
 
- select avg(escape_attempts) as escape_attempts from animals where species = 'digimon';
+ select avg(escape_attempts) as escape_attempts from animals where species = 'digimon' and  date_of_birth
+between '1990-1-1' and '2000-1-1'; --0
 
 --escape_attempts
 --------------------
