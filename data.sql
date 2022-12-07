@@ -23,3 +23,9 @@ INSERT INTO species  (name) VALUES
 ('Pokemon'),
 ('Digimon');
 
+update animals set species_id = 2 where name like '%mon';
+update animals set species_id = 1 where name not like '%mon';
+update animals set owner_id = 1 where name = 'Agumon';
+update animals set owner_id = 3 where name = 'Devimon' or  name = 'Plantmon';
+update animals set owner_id = 4 where name = 'Charmander' or  name = 'Squirtle' or name = 'Blossom';
+

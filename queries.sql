@@ -73,12 +73,6 @@ between '1990-1-1' and '2000-1-1'; --0
 --------------------
  --2.6666666666666667
 
-update animals set species_id = 2 where name like '%mon';
-update animals set species_id = 1 where name not like '%mon';
-update animals set owner_id = 1 where name = 'Agumon';
-update animals set owner_id = 3 where name = 'Devimon' or  name = 'Plantmon';
-update animals set owner_id = 4 where name = 'Charmander' or  name = 'Squirtle' or name = 'Blossom';
-
 --What animals belong to Melody Pond?
 select name as Animals from animals A join owners O on A.owner_id = O.id where O.full_name = 'Melody Pond';
 --animals
