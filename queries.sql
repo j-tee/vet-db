@@ -72,3 +72,69 @@ between '1990-1-1' and '2000-1-1'; --0
 --escape_attempts
 --------------------
  --2.6666666666666667
+
+--What animals belong to Melody Pond?
+select name as Animals from animals A join owners O on A.owner_id = O.id where O.full_name = 'Melody Pond';
+--animals
+------------
+ --Blossom
+ --Charmander
+ --Squirtle
+
+ --List of all animals that are pokemon (their type is Pokemon).
+ select A.name as Animals, S.name as Species from animals A join species S on A.species_id = S.id where S.
+name='Pokemon';
+--animals   | species
+---------------+---------
+--Pikachu   | Pokemon
+--Blossom   | Pokemon
+--Charmander | Pokemon
+--Squirtle   | Pokemon
+
+--List all owners and their animals, remember to include those that don't own any animal.
+select o.full_name, a.name from animals a right join owners o on a.owner_id = o.id;
+------full_name    |    name
+-----------------+------------
+ --Sam Smith       | Agumon
+ --Jennifer Orwell | Pikachu
+ --Jennifer Orwell | Gabumon
+ --Bob             | Devimon
+ --Bob             | Plantmon
+ --Melody Pond     | Blossom
+ --Melody Pond     | Charmander
+ --Melody Pond     | Squirtle
+ --Dean Winchester | Boarmon
+ --Dean Winchester | Angemon
+ --Jodie Whittaker |
+
+ --How many animals are there per species?
+ select count(a.name) as Animals, s.name as species from animals a join species s on a.species_id = s.id g
+roup by s.id;
+ --animals | species
+---------+---------
+--   4 | Pokemon
+--   6 | Digimon
+
+--List all Digimon owned by Jennifer Orwell.
+select o.full_name, s.name from owners o join animals a on o.id = a.owner_id join species s on s.id = a.species_id where s.name='Digimon' and o.full_name = 'Jennifer Orwell';
+ --   full_name    |  name
+-------------------+---------
+-- Jennifer Orwell | Digimon
+
+--List all animals owned by Dean Winchester that haven't tried to escape.
+select o.full_name, a.name from owners o join animals a on o.id = a.owner_id where a.escape_attempts = 0 and o.full_name = 'Dean Winchester';
+-- full_name | name
+-----------+------
+--(0 rows)
+
+--Who owns the most animals?
+select o.full_name as Owners, count(a.name) as animals from animals a join owners o on a.owner_id = o.id
+group by o.full_name;
+----   owners      | animals
+-----------------+------------
+-- Dean Winchester |       2
+-- Melody Pond     |       3
+-- Bob             |       2
+-- Jennifer Orwell |       2
+-- Sam Smith       |       1
+
