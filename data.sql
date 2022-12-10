@@ -56,3 +56,148 @@ UPDATE animals
    SET owner_id = (SELECT id from owners WHERE full_name = 'Dean Winchester')
    WHERE name = 'Angemon'  OR name = 'Boarmon';
 
+
+INSERT INTO vets (name, age, date_of_graduation) VALUES 
+('William Tatcher', 45, '2000-4-23'),
+('Maisy Smith', 26, '2019-1-17'),
+('Stephanie Mendez', 64, '1981-5-4'),
+('Jack Harkness', 38, '2008-6-8');
+
+INSERT INTO specializations(species_id, vet_id)
+SELECT s.id, v.id
+from species s, vets v
+where s.name = 'Pokemon' and v.name = 'William Tatcher';
+
+INSERT INTO specializations(species_id, vet_id)
+SELECT s.id, v.id
+from species s, vets v
+where (s.name = 'Digimon' or s.name = 'Pokemon') and v.name = 'Stephanie Mendez';
+
+INSERT INTO specializations(species_id, vet_id)
+SELECT s.id, v.id
+from species s, vets v
+where s.name = 'Digimon' and v.name = 'Jack Harkness';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-5-24'
+from animals a, vets v
+where a.name = 'Agumon' and v.name = 'Jack Harkness';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-7-22'
+from animals a, vets v
+where a.name = 'Agumon' and v.name = 'Stephanie Mendez';
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2021-2-2'
+from animals a, vets v
+where a.name = 'Gabumon' and v.name = 'Jack Harkness';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-1-5'
+from animals a, vets v
+where a.name = 'Pikachu' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-3-8'
+from animals a, vets v
+where a.name = 'Pikachu' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-5-14'
+from animals a, vets v
+where a.name = 'Pikachu' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-5-14'
+from animals a, vets v
+where a.name = 'Pikachu' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2021-5-4'
+from animals a, vets v
+where a.name = 'Devimon' and v.name = 'Stephanie Mendez';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2021-2-24'
+from animals a, vets v
+where a.name = 'Charmander' and v.name = 'Jack Harkness';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2019-12-21'
+from animals a, vets v
+where a.name = 'Plantmon' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-8-10'
+from animals a, vets v
+where a.name = 'Plantmon' and v.name = 'William Tatcher';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2021-4-7'
+from animals a, vets v
+where a.name = 'Plantmon' and v.name = 'Maisy Smith';
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2019-9-29'
+from animals a, vets v
+where a.name = 'Squirtle' and v.name = 'Stephanie Mendez';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-10-3'
+from animals a, vets v
+where a.name = 'Angemon' and v.name = 'Jack Harkness';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-11-4'
+from animals a, vets v
+where a.name = 'Angemon' and v.name = 'Jack Harkness';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2019-1-24'
+from animals a, vets v
+where a.name = 'Boarmon' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2019-5-15'
+from animals a, vets v
+where a.name = 'Boarmon' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-2-27'
+from animals a, vets v
+where a.name = 'Boarmon' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-8-3'
+from animals a, vets v
+where a.name = 'Boarmon' and v.name = 'Maisy Smith';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2020-5-24'
+from animals a, vets v
+where a.name = 'Blossom' and v.name = 'Stephanie Mendez';
+
+
+INSERT INTO visits(animal_id, vet_id, date_of_visit)
+SELECT a.id, v.id, '2021-1-11'
+from animals a, vets v
+where a.name = 'Blossom' and v.name = 'William Tatcher';
