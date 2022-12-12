@@ -216,3 +216,7 @@ from vets where id not in (select vet_id from specializations)) group by ve.name
 --- Maisy Smith | Pokemon |            3
 
 --Answer: Digimon
+
+
+--- Decrease execution time by using the animal name
+SELECT COUNT(*) FROM visits where animal_name = 'Devimon';

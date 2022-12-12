@@ -74,3 +74,12 @@ CREATE TABLE visits  (
 -- Add an email column to your owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
+
+--- Add animal_name col to visits table
+ALTER TABLE visits
+ADD COLUMN animal_name VARCHAR(50);
+
+--- Create a non-clustered index for visits table
+CREATE INDEX animal_name_asc ON visits (animal_name ASC);
+
+
