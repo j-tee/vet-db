@@ -219,4 +219,6 @@ from vets where id not in (select vet_id from specializations)) group by ve.name
 
 
 --- Decrease execution time by using the animal name
-SELECT COUNT(*) FROM visits where animal_name = 'Devimon';
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
