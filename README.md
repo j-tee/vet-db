@@ -64,7 +64,7 @@ After you're finished please remove all the comments and instructions!
 # 📖 [vet-db] <a name="about-project"></a>
 
 > **[Vet Clinic]** is a database of animals and their health records
-
+<img src='./erd.png'>
 ## 🛠 Designed In <a name="built-with">PostgreSQL</a>
 
 ### Tech Stack <a name="tech-stack"></a>
